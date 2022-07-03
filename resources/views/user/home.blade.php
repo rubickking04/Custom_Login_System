@@ -6,7 +6,7 @@
                 <div class="card shadow">
                     <div class="card-header" style="font-family: 'Roboto', sans-serif;">Dashboard</div>
                     <div class="card-body">
-                        <p style="font-family: 'Roboto', sans-serif;">Welcome  {{ Auth::user()->name }}</p>
+                        <p style="font-family: 'Roboto', sans-serif;">Welcome  {{ Auth::user()->name }}!</p>
                     </div>
                 </div>
             </div>
