@@ -17,8 +17,8 @@ use App\Http\Controllers\User\LoginController;
 */
 
 Route::get('/', function () {
-    // return abort(401, 'Hello');
-    return view('user.login');
+    return abort(500, 'Hello');
+    // return view('user.login');
 });
 // Facebook Login URL
 Route::prefix('facebook')->name('facebook.')->group(function () {
