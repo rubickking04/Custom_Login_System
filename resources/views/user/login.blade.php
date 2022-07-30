@@ -6,7 +6,9 @@
                 <div class="card shadow ">
                     <div class="card-body py-3">
                         <div class="text-center">
-                            <img src="{{ asset('/storage/images/razor.jpg') }}" alt="avatar" class="rounded-circle img-thumbnail border border-4 border-dark mb-3" height="100px" width="100px">
+                            <img src="{{ asset('/storage/images/razor.jpg') }}" alt="avatar"
+                                class="rounded-circle img-thumbnail border border-4 border-dark mb-3" height="100px"
+                                width="100px">
                             <h2>Ra<span class="text-danger fw-bold">z</span>or Team Login Page</h2>
                         </div>
                         <form method="POST" action="{{ route('login.store') }}">
@@ -15,13 +17,14 @@
                                 <div class="form-outline text-start">
                                     <label for="email" class="col-form-label">Email</label>
                                     <div class="input-group">
-                                    <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
-                                    <input type="email" id="email" placeholder="juandelacruz@hotmail.com" name="email" class="form-control @error('email') is-invalid @enderror"/>
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                        <div class="input-group-text"><i class="bi bi-envelope-fill"></i></div>
+                                        <input type="email" id="email" placeholder="juandelacruz@hotmail.com"
+                                            name="email" class="form-control @error('email') is-invalid @enderror" />
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-outline text-start">
@@ -31,7 +34,8 @@
                                             <i class="fas fa-eye" id="show_eye"></i>
                                             <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
                                         </span>
-                                        <input id="password" type="password" placeholder="Must be 8-20 characters long." class="form-control @error('password') is-invalid @enderror" name="password">
+                                        <input id="password" type="password" placeholder="Must be 8-20 characters long."
+                                            class="form-control @error('password') is-invalid @enderror" name="password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -43,15 +47,17 @@
                             <div class="form-outline text-start">
                                 <div class="row mb-2">
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                        <div class="form-check small">
+                                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                                {{ old('remember') ? 'checked' : '' }}>
                                             <label class="form-check-label" for="remember">
                                                 {{ __('Remember Me') }}
-                                                </label>
+                                            </label>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-6 text-end">
-                                        <a class="text-underline" href="#" onclick="return confirm('Kalma ako lang to')">
+                                        <a class="text-underline small" href="#"
+                                            onclick="return confirm('Kalma ako lang to')">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     </div>
@@ -72,9 +78,12 @@
                                 </div>
                                 <div class="container justify-content-center">
                                     <div class="gap-3 text-center">
-                                        <a href="{{  route('facebook.login') }}" target="_blank"><span class="fs-3 bi bi-facebook px-3"></span></a>
-                                        <a href="https://github.com/rubickking04"><span class="fs-3 text-dark bi bi-github px-3"></span></a>
-                                        <a href="https://github.com/rubickking04"><span class="fs-3 text-danger bi bi-google px-3"></span></a>
+                                        <a href="{{ route('facebook.login') }}" target="_blank"><span
+                                                class="fs-3 bi bi-facebook px-3"></span></a>
+                                        <a href="https://github.com/rubickking04"><span
+                                                class="fs-3 text-dark bi bi-github px-3"></span></a>
+                                        <a href="https://github.com/rubickking04"><span
+                                                class="fs-3 text-danger bi bi-google px-3"></span></a>
                                     </div>
                                 </div>
                                 <div class="text-center">

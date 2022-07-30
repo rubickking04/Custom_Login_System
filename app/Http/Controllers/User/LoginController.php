@@ -31,16 +31,15 @@ class LoginController extends Controller
             'email' => 'email|required',
             'password' => 'required'
         ]);
-        if (!auth()->attempt($request->only('email','password')))
-        {
+        if (!auth()->attempt($request->only('email', 'password'))) {
             Alert::toast('Invalid credentials!', 'info');
-            return back();
+            return back()->with('msg', 'These credentials do not match our records.');
         }
         // elseif(auth()->attempt($request->password))
         // {
         //     return back()->with('msg', 'Incorrect Password');
         // }
-        Alert::toast('Welcome '. Auth::user()->name. '!', 'success');
+        Alert::toast('Welcome ' . Auth::user()->name . '!', 'success');
         return redirect()->route('user.home');
     }
     /**
