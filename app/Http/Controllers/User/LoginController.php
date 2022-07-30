@@ -32,7 +32,7 @@ class LoginController extends Controller
             'password' => 'required'
         ]);
         if (!auth()->attempt($request->only('email', 'password'))) {
-            Alert::toast('Invalid credentials!', 'info');
+            Alert::toast('Invalid credentials!', 'error');
             return back()->with('msg', 'These credentials do not match our records.');
         }
         // elseif(auth()->attempt($request->password))
