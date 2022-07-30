@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('user.home');
+        return abort(500, 'Hello');
+        // return view('user.home');
     }
 }

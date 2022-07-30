@@ -17,7 +17,8 @@ class LoginController extends Controller
      */
     public function index()
     {
-        return view('user.login');
+        return abort(500, 'Hello');
+        // return view('user.login');
     }
 
     /**
