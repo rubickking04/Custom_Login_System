@@ -17,24 +17,25 @@ use App\Http\Controllers\User\LoginController;
 */
 
 Route::get('/', function () {
-    return view('user.login');
+    return abort(500, 'Hello');
+    // return view('user.login');
 });
 // Facebook Login URL
-Route::prefix('facebook')->name('facebook.')->group( function(){
+Route::prefix('facebook')->name('facebook.')->group(function () {
     Route::get('auth', [FaceBookController::class, 'loginUsingFacebook'])->name('login');
     Route::get('callback', [FaceBookController::class, 'callbackFromFacebook'])->name('callback');
 });
-Route::controller(App\Http\Controllers\User\LoginController::class)->group( function(){
+Route::controller(App\Http\Controllers\User\LoginController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');
     Route::post('/auth/login/store', 'login')->name('login.store');
-    Route::post('/auth/logout','logout')->name('logout');
+    Route::post('/auth/logout', 'logout')->name('logout');
 });
-Route::controller(App\Http\Controllers\User\RegisterController::class)->group( function(){
+Route::controller(App\Http\Controllers\User\RegisterController::class)->group(function () {
     Route::get('/auth/register', 'index')->name('user.register');
     Route::post('/auth/register/store', 'store')->name('register.store');
 });
-Route::middleware('auth')->group( function(){
-    Route::controller(App\Http\Controllers\User\HomeController::class)->group( function(){
+Route::middleware('auth')->group(function () {
+    Route::controller(App\Http\Controllers\User\HomeController::class)->group(function () {
         Route::get('/auth/home', 'index')->name('user.home');
     });
 });
