@@ -26,13 +26,13 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, )
+    public function store(Request $request,)
     {
         $request->validate([
             'name' => 'required|string',
-            'email'=>'required|email|string|max:255|unique:users,email',
+            'email' => 'required|email|string|max:255|unique:users,email',
             'password' => 'required|min:6',
-            // 'password' => 'required|confirmed|min:6',
+            'password' => 'required|confirmed|min:6',
         ]);
         $user = User::create([
             'name' => $request->input('name'),

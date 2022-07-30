@@ -6,10 +6,12 @@
                 <div class="card shadow ">
                     <div class="card-body py-3">
                         <div class="text-center">
-                            <img src="{{ asset('/storage/images/razor.jpg') }}" alt="avatar"
+                            {{-- <img src="{{ asset('/storage/images/razor.jpg') }}" alt="avatar"
                                 class="rounded-circle img-thumbnail border border-4 border-dark mb-3" height="100px"
                                 width="100px">
-                            <h2>Ra<span class="text-danger fw-bold">z</span>or Team Login Page</h2>
+                            <h2>Ra<span class="text-danger fw-bold">z</span>or Team Login Page</h2> --}}
+                            <img src="{{ asset('/storage/images/images.png') }}" alt="avatar" class="rounded-circle img-fluid " height="80px" width="80px">
+                        <h3> <span class="text-danger fw-bold" style="font-family: 'Poppins', sans-serif;"> Laravel </span>Login Page</h3>
                         </div>
                         <form method="POST" action="{{ route('login.store') }}">
                             @csrf
